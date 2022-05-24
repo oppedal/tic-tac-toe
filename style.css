@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cookie&family=Plus+Jakarta+Sans:wght@200;400&display=swap');
+
+:root {
+  --dark: #282729;
+  --light: #f7f5f1;
+  --x: #f1b844;
+  --o: #d64b92;
+
+  --hand: 'Cookie', cursive;
+  --normal: 'Plus Jakarta Sans', sans-serif;
+}
+
+html {
+  font-family: var(--normal);
+  background-color: var(--dark);
+}

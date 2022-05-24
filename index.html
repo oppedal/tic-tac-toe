@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="normalize.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+    <title>Tic Tac Toe!</title>
+  </head>
+  <body>
+    <section class="container">
+      <header>
+        <div class="header-left"><h1>Tic tac toe</h1></div>
+        <div class="header-mid">
+          <h2 class="player--1--heading">Player one</h2>
+          <h3>VS</h3>
+          <h2 class="player--2--heading">Player two</h2>
+        </div>
+      </header>
+      <div class="board-wrap">
+        <div class="modal">
+          <h1>Please select gametype</h1>
+          <button class="pvp">Player vs player</button>
+          <button class="p-ai">Player vs AI</button>
+          <button class="ai-ai">AI vs AI</button>
+          <div class="modal--pvp">
+            <input
+              type="text"
+              name="player-one"
+              id="player--one"
+              placeholder="Input player one"
+            />
+            <input
+              type="text"
+              name="player-two"
+              id="player--two"
+              placeholder="Input player two"
+            />
+            <button type="submit">Let's play!</button>
+          </div>
+          <div class="modal--pai">
+            <input
+              type="text"
+              name="player-one"
+              id="player--one"
+              placeholder="Input player one"
+            />
+            <h3>Select AI</h3>
+            <button class="ai--easy">Easy</button>
+            <button class="ai--medium">Medium</button>
+            <button class="ai--hard">Hard</button>
+            <button class="ai--impossible">Impossible</button>
+            <button type="submit">Let's play!</button>
+          </div>
+        </div>
+        <div class="board-child--1"></div>
+        <div class="board-child--2"></div>
+        <div class="board-child--3"></div>
+        <div class="board-child--4"></div>
+        <div class="board-child--5"></div>
+        <div class="board-child--6"></div>
+        <div class="board-child--7"></div>
+        <div class="board-child--8"></div>
+        <div class="board-child--9"></div>
+      </div>
+      <div class="game">
+        <button>Play again</button>
+        <button>New game</button>
+      </div>
+    </section>
+  </body>
+</html>
