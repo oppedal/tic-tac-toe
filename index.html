@@ -14,54 +14,64 @@
       <header>
         <div class="header-left"></div>
         <div class="header-mid">
-          <h2 class="player--1--heading">Player one</h2>
-          <h2>VS</h2>
-          <h2 class="player--2--heading">Player two</h2>
+          <div class="players">
+            <h2 class="player--1--heading">Fredd</h2>
+            <h2>VS</h2>
+            <h2 class="player--2--heading">Snorre</h2>
+          </div>
+          <div class="score">
+            <h2 class="player--1--score">1</h2>
+            <h2 class="player--2--score">2</h2>
+          </div>
         </div>
       </header>
       <div class="board-wrap">
-        <div class="board board-child--1 mark--x"></div>
+        <div class="board board-child--1"></div>
         <div class="board board-child--2"></div>
-        <div class="board board-child--3 mark--o"></div>
+        <div class="board board-child--3"></div>
         <div class="board board-child--4"></div>
-        <div class="board board-child--5 mark--o"></div>
-        <div class="board board-child--6 mark--x"></div>
-        <div class="board board-child--7 mark--o"></div>
+        <div class="board board-child--5"></div>
+        <div class="board board-child--6"></div>
+        <div class="board board-child--7"></div>
         <div class="board board-child--8"></div>
         <div class="board board-child--9"></div>
         <div class="modal">
-          <h1>Please select gametype</h1>
-          <button class="pvp">Player vs player</button>
-          <button class="p-ai">Player vs AI</button>
-          <button class="ai-ai">AI vs AI</button>
-          <div class="modal--pvp">
-            <input
-              type="text"
-              name="player-one"
-              id="player--one"
-              placeholder="Input player one"
-            />
-            <input
-              type="text"
-              name="player-two"
-              id="player--two"
-              placeholder="Input player two"
-            />
-            <button type="submit">Let's play!</button>
-          </div>
-          <div class="modal--pai">
-            <input
-              type="text"
-              name="player-one"
-              id="player--one"
-              placeholder="Input player one"
-            />
-            <h3>Select AI</h3>
-            <button class="ai--easy">Easy</button>
-            <button class="ai--medium">Medium</button>
-            <button class="ai--hard">Hard</button>
-            <button class="ai--impossible">Impossible</button>
-            <button type="submit">Let's play!</button>
+          <div class="modal--content">
+            <div class="modal--start">
+              <h1>Please select gametype</h1>
+              <button class="pvp">Player vs player</button>
+              <button class="p-ai">Player vs AI</button>
+              <button class="ai-ai">AI vs AI</button>
+            </div>
+            <div class="modal--pvp">
+              <input
+                type="text"
+                name="player-one"
+                id="player--one"
+                placeholder="Input player one"
+              />
+              <input
+                type="text"
+                name="player-two"
+                id="player--two"
+                placeholder="Input player two"
+              />
+              <button type="submit">Let's play!</button>
+            </div>
+            <div class="modal--pai">
+              <input
+                type="text"
+                name="player-one"
+                id="player--one"
+                placeholder="Input player one"
+              />
+              <h3>Select AI</h3>
+              <button class="ai--easy">Easy</button>
+              <button class="ai--medium">Medium</button>
+              <button class="ai--hard">Hard</button>
+              <button class="ai--impossible">Impossible</button>
+              <button type="submit">Let's play!</button>
+            </div>
           </div>
         </div>
       </div>
