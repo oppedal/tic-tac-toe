@@ -10,7 +10,7 @@ const gameBoard = (() => {
     board,
   };
 })();
-
+console.log(gameBoard.board.indexOf(2 + 1));
 const gameController = (() => {
   const boardDivs = document.querySelectorAll('.board');
 
