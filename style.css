@@ -94,12 +94,12 @@ header h2 {
 .mark--o {
   background-image: url(/img/O.svg);
   background-repeat: no-repeat;
-  background-position: 50px 50px;
+  background-position: center;
 }
 .mark--x {
   background-image: url(/img/X.svg);
   background-repeat: no-repeat;
-  background-position: 50px 50px;
+  background-position: center;
 }
 .modal {
   display: none;
