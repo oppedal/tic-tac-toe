@@ -198,3 +198,12 @@ const Player = (playerName, playerNumber) => {
 
   return { getName, getMarker };
 };
+
+const arr = [1, 2, 3, 4, 5, 6];
+
+const output = arr.reduce((acc, curr) => {
+  if (curr > acc) acc = curr;
+  return acc;
+}, 0);
+
+console.log(output);

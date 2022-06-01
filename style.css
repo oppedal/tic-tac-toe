@@ -14,7 +14,32 @@ html {
   font-family: var(--normal);
   background-color: var(--dark);
 }
-
+button {
+  font-size: 15px;
+  font-weight: 200;
+  letter-spacing: 1px;
+  padding: 13px 50px 13px;
+  outline: 0;
+  border: 1px solid black;
+  cursor: pointer;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0);
+}
+button::after {
+  content: '';
+  background-color: var(--o);
+  width: 100%;
+  z-index: -1;
+  position: absolute;
+  height: 100%;
+  top: 7px;
+  left: 7px;
+  transition: 0.2s;
+}
+button:hover::after {
+  top: 0px;
+  left: 0px;
+}
 .container {
   height: 100vh;
   /* background-image: url(/img/art-left.svg), url(/img/art-right.svg);
@@ -101,23 +126,71 @@ header h2 {
   background-repeat: no-repeat;
   background-position: center;
 }
-.modal {
+.hidden {
   display: none;
+}
+.modal {
   margin-inline: auto;
   grid-area: 2 / 1 / 4 / 3;
   height: 720px;
   width: 720px;
-  background-color: blue;
-  z-index: 100;
+  border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 10px 10px 10px 10px;
+  -webkit-border-radius: 10px 10px 10px 10px;
+  border: 0px solid #000000;
+  background: rgba(214, 75, 147, 1);
+  background: -moz-linear-gradient(
+    left,
+    rgba(214, 75, 147, 1) 0%,
+    rgba(241, 183, 68, 1) 100%
+  );
+  background: -webkit-gradient(
+    left top,
+    right top,
+    color-stop(0%, rgba(214, 75, 147, 1)),
+    color-stop(100%, rgba(241, 183, 68, 1))
+  );
+  background: -webkit-linear-gradient(
+    left,
+    rgba(214, 75, 147, 1) 0%,
+    rgba(241, 183, 68, 1) 100%
+  );
+  background: -o-linear-gradient(
+    left,
+    rgba(214, 75, 147, 1) 0%,
+    rgba(241, 183, 68, 1) 100%
+  );
+  background: -ms-linear-gradient(
+    left,
+    rgba(214, 75, 147, 1) 0%,
+    rgba(241, 183, 68, 1) 100%
+  );
+  background: linear-gradient(
+    to right,
+    rgba(214, 75, 147, 1) 0%,
+    rgba(241, 183, 68, 1) 100%
+  );
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d64b93', endColorstr='#f1b744', GradientType=1 );
+
+  z-index: 50;
   position: fixed;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 .modal--start {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  display: none;
+  justify-content: space-evenly;
+  gap: 2rem;
+}
+.modal--start h1 {
+  font-size: 3rem;
+  font-family: var(--hand);
+  color: var(--dark);
+  position: absolute;
+  top: 0;
 }
 .modal--pvp {
   display: flex;
@@ -125,10 +198,9 @@ header h2 {
   align-items: center;
   justify-content: center;
   gap: 1rem;
-  /* display: none; */
+  display: none;
 }
 .modal--pai {
-  display: none;
 }
 footer {
   grid-area: 4 / 1 / 5 / 3;
