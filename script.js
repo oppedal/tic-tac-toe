@@ -2,8 +2,9 @@
 const changePlayerBtn = document.querySelector('.changeplayer');
 
 const gameBoard = (() => {
+  const markX = 'x';
+  const markO = 'o';
   let board = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-
   const winning = {
     win_o_1: ['o', 'o', 'o', 4, 5, 6, 7, 8, 9],
     win_o_2: [1, 2, 3, 'o', 'o', 'o', 7, 8, 9],
@@ -26,6 +27,8 @@ const gameBoard = (() => {
   return {
     winning,
     board,
+    markO,
+    markX,
   };
 })();
 const gameController = (() => {
@@ -41,11 +44,9 @@ const gameController = (() => {
       activeMarker = 'o';
       activeMarkerClass = `mark--${activeMarker}`;
     }
-    console.log(activeMarker, activeMarkerClass);
   });
   boardDivs.forEach((button) => {
     button.addEventListener('click', () => {
-      console.log(`Game board ${gameBoard.winning.win_o_1}`);
       button.classList.add(`${activeMarkerClass}`);
       //Get the last number from the boardDivs.//
       const getNumFromClass = button.classList[1];
@@ -55,140 +56,121 @@ const gameController = (() => {
           gameBoard.board[i] = `${activeMarker}`;
         }
       });
-      console.log(gameBoard.board);
       const equal = (a1, a2, ...indexes) =>
         indexes.every((i) => a1[i] === a2[i]);
-
-      let answer_o_1 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_1],
-        0,
-        1,
-        2
-      );
-      let answer_o_2 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_2],
-        3,
-        4,
-        5
-      );
-      let answer_o_3 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_3],
-        6,
-        7,
-        8
-      );
-      let answer_o_4 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_4],
-        0,
-        4,
-        6
-      );
-      let answer_o_5 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_5],
-        1,
-        4,
-        7
-      );
-      let answer_o_6 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_6],
-        2,
-        5,
-        8
-      );
-      let answer_o_7 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_7],
-        0,
-        4,
-        8
-      );
-      let answer_o_8 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_o_8],
-        2,
-        4,
-        6
-      );
-      let answer_x_1 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_1],
-        0,
-        1,
-        2
-      );
-      let answer_x_2 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_2],
-        3,
-        4,
-        5
-      );
-      let answer_x_3 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_3],
-        6,
-        7,
-        8
-      );
-      let answer_x_4 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_4],
-        0,
-        4,
-        6
-      );
-      let answer_x_5 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_5],
-        1,
-        4,
-        7
-      );
-      let answer_x_6 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_6],
-        2,
-        5,
-        8
-      );
-      let answer_x_7 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_7],
-        0,
-        4,
-        8
-      );
-      let answer_x_8 = equal(
-        [...gameBoard.board],
-        [...gameBoard.winning.win_x_8],
-        2,
-        4,
-        6
-      );
-
       const findWinner = {
-        answer_o_1,
-        answer_o_2,
-        answer_o_3,
-        answer_o_4,
-        answer_o_5,
-        answer_o_6,
-        answer_o_7,
-        answer_o_8,
-        answer_x_1,
-        answer_x_2,
-        answer_x_3,
-        answer_x_4,
-        answer_x_5,
-        answer_x_6,
-        answer_x_7,
-        answer_x_8,
+        answer_o_1: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_1],
+          0,
+          1,
+          2
+        ),
+        answer_o_2: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_2],
+          3,
+          4,
+          5
+        ),
+        answer_o_3: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_3],
+          6,
+          7,
+          8
+        ),
+        answer_o_4: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_4],
+          0,
+          4,
+          6
+        ),
+        answer_o_5: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_5],
+          1,
+          4,
+          7
+        ),
+        answer_o_6: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_6],
+          2,
+          5,
+          8
+        ),
+        answer_o_7: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_7],
+          0,
+          4,
+          8
+        ),
+        answer_o_8: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_o_8],
+          2,
+          4,
+          6
+        ),
+        answer_x_1: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_1],
+          0,
+          1,
+          2
+        ),
+        answer_x_2: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_2],
+          3,
+          4,
+          5
+        ),
+        answer_x_3: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_3],
+          6,
+          7,
+          8
+        ),
+        answer_x_4: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_4],
+          0,
+          4,
+          6
+        ),
+        answer_x_5: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_5],
+          1,
+          4,
+          7
+        ),
+        answer_x_6: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_6],
+          2,
+          5,
+          8
+        ),
+        answer_x_7: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_7],
+          0,
+          4,
+          8
+        ),
+        answer_x_8: equal(
+          [...gameBoard.board],
+          [...gameBoard.winning.win_x_8],
+          2,
+          4,
+          6
+        ),
       };
       Object.values(findWinner).some((val) => {
         if (val === true) {
@@ -209,8 +191,8 @@ const gameController = (() => {
 const Player = (playerName, playerNumber) => {
   const getName = () => playerName;
   const getMarker = () => {
-    if (playerNumber === 1) playerMarker = markX;
-    else playerMarker = markO;
+    if (playerNumber === 1) playerMarker = gameBoard.markX;
+    else playerMarker = gameBoard.markO;
   };
   let playerMove = () => {};
 

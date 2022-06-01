@@ -140,6 +140,21 @@ footer {
 
 /* Media Qs */
 /* Adjust board size */
+@media screen and (max-width: 725px) {
+  .board-wrap {
+    height: 600px;
+    width: 600px;
+    background-size: 100%;
+  }
+  .board {
+    height: 200px;
+    width: 200px;
+  }
+  .modal {
+    height: 600px;
+    width: 600px;
+  }
+}
 @media screen and (max-height: 1032px) {
   .board-wrap {
     height: 600px;
@@ -153,6 +168,22 @@ footer {
   .modal {
     height: 600px;
     width: 600px;
+  }
+}
+
+@media screen and (max-width: 596px) {
+  .board-wrap {
+    height: 500px;
+    width: 500px;
+    background-size: 100%;
+  }
+  .board {
+    height: 166.6px;
+    width: 166.6px;
+  }
+  .modal {
+    height: 500px;
+    width: 500px;
   }
 }
 @media screen and (max-height: 899px) {
@@ -171,6 +202,21 @@ footer {
   }
 }
 @media screen and (max-height: 783px) {
+  .board-wrap {
+    height: 300px;
+    width: 300px;
+    background-size: 100%;
+  }
+  .board {
+    height: 100px;
+    width: 100px;
+  }
+  .modal {
+    height: 300px;
+    width: 300px;
+  }
+}
+@media screen and (max-width: 496px) {
   .board-wrap {
     height: 300px;
     width: 300px;
